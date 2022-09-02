@@ -27,8 +27,8 @@ export default function App() {
     return (
         <div id="app">
             <TodoList todos={todos} />
-            {/*  <AddButton />
-            <TodoForm /> */}
+            <AddButton />
+            {/* <TodoForm /> */}
         </div>
     );
 }

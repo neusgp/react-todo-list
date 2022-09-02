@@ -8,8 +8,8 @@ import checkoff from "../public/checkoff.svg";
 export default function Checkbox({ label }) {
     return (
         <div id="checkbox">
-            <img src={bin} />
-            <img src={checkoff} />
+            <img className="bin_icon" src={bin} />
+            <img className="on_icon" src={checkoff} />
             <p className="label">{label}</p>
         </div>
     );

@@ -29,4 +29,13 @@ h1 {
 .label {
     font-size: 1.3em;
     margin: 0;
+    font-weight: 100;
+}
+
+.label_medium {
+    margin: 0;
+    font-size: 1.3em;
+    color: #01001e;
+    font-weight: bolder;
+    min-width: max-content;
 }

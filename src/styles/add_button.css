@@ -1,0 +1,15 @@
+#add_button {
+    margin-top: 1.2%;
+    background-color: #716fb2;
+    border-radius: 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    padding: 1% 1.8%;
+}
+
+.add_icon {
+    width: 20%;
+}

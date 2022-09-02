@@ -4,6 +4,7 @@
     margin-bottom: 3%;
 }
 
-img {
+.bin_icon,
+.on_icon {
     width: 2.8%;
 }
