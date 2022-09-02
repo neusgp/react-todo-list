@@ -20,12 +20,13 @@ body {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 2.4em;
     font-weight: bold;
 
     margin: 0;
 }
 
 .label {
-    font-size: 1.2em;
+    font-size: 1.3em;
+    margin: 0;
 }

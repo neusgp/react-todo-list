@@ -1,9 +1,9 @@
 #checkbox {
     display: flex;
-    gap: 5%;
+    gap: 2%;
+    margin-bottom: 3%;
 }
 
 img {
-    width: 4%;
+    width: 2.8%;
 }
-
