@@ -6,25 +6,37 @@ import TodoList from "./components/todo_list.js";
 import AddButton from "./components/add_button.js";
 import TodoForm from "./components/todo_form";
 
-const todos = [
-    {
-        id: 0,
-        label: "Task 1",
-        checked: false,
-    },
-    {
-        id: 1,
-        label: "Task 2",
-        checked: false,
-    },
-    {
-        id: 2,
-        label: "Task 3",
-        checked: false,
-    },
+const tasks = [
+    [
+        {
+            id: 0,
+            label: "Task 1",
+            checked: false,
+        },
+        {
+            id: 1,
+            label: "Task 2",
+            checked: false,
+        },
+        {
+            id: 2,
+            label: "Task 3",
+            checked: false,
+        },
+    ],
+    [
+        {
+            id: 3,
+            label: "Task 4",
+            checked: true,
+        },
+        {
+            id: 4,
+            label: "Task 5",
+            checked: true,
+        },
+    ],
 ];
-
-const done = [];
 
 export default function App() {
     const [show, setShow] = useState(false);
@@ -40,7 +52,7 @@ export default function App() {
 
     return (
         <div id="app">
-            <TodoList props={{ todos, done }} />
+            <TodoList props={{ tasks }} />
             <AddButton openForm={toggleForm} />
             {show && <TodoForm toggleForm={toggleForm} />}
         </div>

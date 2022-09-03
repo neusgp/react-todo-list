@@ -5,12 +5,30 @@ import "../styles/todo_list.css";
 import Checkbox from "./checkbox.js";
 
 export default function TodoList({ props }) {
-    const [todos, setTodos] = useState(props.todos);
-    const [done, setDone] = useState(props.done);
+    const [tasks, setTasks] = useState(props.tasks);
+    const [todos, setTodos] = useState(props.tasks[0]);
+    const [done, setDone] = useState(props.tasks[1]);
 
-    const getTask = (id) => {
-        const filteredArr = todos.filter((x) => x.id === id);
+    const getTask = (id, arr) => {
+        const filteredArr = arr.filter((x) => x.id === id);
         return filteredArr[0];
+    };
+
+    /* const removeTask = (id, arr) => {
+        const newTodos = arr.filter((todo) => todo.id !== id);
+        setTodos(newTodos);
+    }; */
+
+    console.log("tasks", tasks, "todos", todos, "done", done);
+
+    const handleDelete = (id) => {
+        let newArr = [];
+        for (let i = 0; i < tasks.length; i++) {
+            const newTasks = tasks[i].filter((task) => task.id !== id);
+            newArr.push(newTasks);
+        }
+        console.log("new array", arr);
+        setTasks(newArr);
     };
 
     const toggleChecked = (id) => {
@@ -38,24 +56,21 @@ export default function TodoList({ props }) {
         return;
     }; */
 
-    const handleDelete = (id) => {
-        const newTodos = todos.filter((todo) => todo.id !== id);
-        setTodos(newTodos);
-    };
-
     return (
         <div id="todo_list">
             <h1>To-Do List</h1>
             <div className="todo_list_content">
-                {todos.map((item) => (
-                    <Checkbox
-                        key={item.id}
-                        label={item.label}
-                        checked={item.checked}
-                        handleChecked={() => toggleChecked(item.id)}
-                        handleDelete={() => handleDelete(item.id)}
-                    />
-                ))}
+                {tasks.map((index) =>
+                    index.map((task) => (
+                        <Checkbox
+                            key={task.id}
+                            label={task.label}
+                            checked={task.checked}
+                            handleChecked={() => toggleChecked(task.id)}
+                            handleDelete={() => handleDelete(task.id)}
+                        />
+                    ))
+                )}
             </div>
         </div>
     );
