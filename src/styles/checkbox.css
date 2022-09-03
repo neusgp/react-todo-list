@@ -5,11 +5,19 @@
 }
 
 .bin_icon,
-.on_icon {
+.check_icon {
     width: 2.8%;
 }
 
 .bin_icon:hover,
-.on_icon:hover {
+.check_icon:hover {
     cursor: pointer;
+}
+
+.checkbox-checked {
+    font-size: 1.3em;
+    margin: 0;
+    font-weight: 400;
+    color: white;
+    text-decoration: line-through;
 }

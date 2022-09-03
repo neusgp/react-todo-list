@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "./styles/app.css";
 
 import TodoList from "./components/todo_list.js";
@@ -23,12 +24,26 @@ const todos = [
     },
 ];
 
+const done = [];
+
 export default function App() {
+    const [show, setShow] = useState(false);
+
+    const toggleForm = () => {
+        if (show === false) {
+            setShow(true);
+            return;
+        }
+        setShow(false);
+    };
+
+    console.log("hi", show);
+
     return (
         <div id="app">
-            <TodoList todos={todos} />
-            <AddButton />
-            <TodoForm />
+            <TodoList props={{ todos, done }} />
+            <AddButton openForm={toggleForm} />
+            {show && <TodoForm /* props={{ toggleForm, show }} */ />}
         </div>
     );
 }
