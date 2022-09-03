@@ -28,7 +28,7 @@ export default function App() {
         <div id="app">
             <TodoList todos={todos} />
             <AddButton />
-            {/* <TodoForm /> */}
+            <TodoForm />
         </div>
     );
 }

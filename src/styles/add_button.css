@@ -1,20 +1,10 @@
 #add_button {
-    margin-top: 1.2%;
-    background-color: #716fb2;
+    margin-top: 1.4%;
     border-radius: 28px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 10%;
     padding: 1% 1.8%;
 }
 
-#add_button:hover {
-    cursor: pointer;
-}
-
 .add_icon {
     width: 20%;
-    fill: black;
 }
