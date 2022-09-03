@@ -30,6 +30,29 @@ export default function TodoList({ props }) {
             });
             newArr.push(newTasks);
         }
+
+        let checkedTask;
+        /*     let todos = ;
+        let done = newArr[1]; */
+
+        for (let i = 0; i < newArr.length; i++) {
+            const filteredArr = newArr[i].filter((task) => task.id === id);
+
+            if (filteredArr[0]) {
+                checkedTask = filteredArr[0];
+            }
+
+            const emptiedArr = newArr[i].filter((task) => task.id !== id);
+            newArr[i] = emptiedArr;
+        }
+
+        console.log(newArr, checkedTask);
+
+        if (checkedTask.checked === true) {
+            newArr[1] = [checkedTask, ...newArr[1]];
+        } else if (checkedTask.checked === false) {
+            newArr[0] = [checkedTask, ...newArr[0]];
+        }
         setTasks(newArr);
     };
 
