@@ -8,3 +8,8 @@
 .on_icon {
     width: 2.8%;
 }
+
+.bin_icon:hover,
+.on_icon:hover {
+    cursor: pointer;
+}

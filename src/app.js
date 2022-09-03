@@ -8,17 +8,17 @@ import TodoForm from "./components/todo_form";
 const todos = [
     {
         id: 0,
-        label: "Cuccinare il ragú.",
+        label: "Task 1",
         checked: false,
     },
     {
         id: 1,
-        label: "Mangiare un aranccione",
+        label: "Task 2",
         checked: false,
     },
     {
         id: 2,
-        label: "Cantare un'aria.",
+        label: "Task 3",
         checked: false,
     },
 ];
