@@ -30,6 +30,7 @@ export default function App() {
     const [show, setShow] = useState(false);
 
     const toggleForm = () => {
+        console.log("hi", show);
         if (show === false) {
             setShow(true);
             return;
@@ -37,13 +38,11 @@ export default function App() {
         setShow(false);
     };
 
-    console.log("hi", show);
-
     return (
         <div id="app">
             <TodoList props={{ todos, done }} />
             <AddButton openForm={toggleForm} />
-            {show && <TodoForm /* props={{ toggleForm, show }} */ />}
+            {show && <TodoForm toggleForm={toggleForm} />}
         </div>
     );
 }

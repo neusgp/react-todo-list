@@ -4,7 +4,7 @@ import "../styles/todo_form.css";
 
 import SaveButton from "./save_button.js";
 
-export default function TodoForm({ props }) {
+export default function TodoForm({ toggleForm }) {
     return (
         <div id="todo_form" /* className="hide_form" */>
             <div className="modal">
@@ -12,7 +12,7 @@ export default function TodoForm({ props }) {
                     className="label"
                     placeholder="Inserisci voce"
                 ></textarea>
-                <SaveButton />
+                <SaveButton toggleForm={toggleForm} />
             </div>
         </div>
     );
