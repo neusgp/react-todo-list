@@ -54,7 +54,7 @@ export default function App() {
         <div id="app">
             <TodoList props={{ tasks }} />
             <AddButton openForm={toggleForm} />
-            {show && <TodoForm toggleForm={toggleForm} />}
+            <TodoForm toggleForm={toggleForm} show={show} />
         </div>
     );
 }

@@ -5,7 +5,7 @@ import "../styles/todo_list.css";
 import Checkbox from "./checkbox.js";
 
 export default function TodoList({ props }) {
-    const [tasks, setTasks] = useState(props.tasks);
+    const [tasks, setTasks] = useState(props.tasks); //atenció, canviar (no hi ha més done/todos)
 
     console.log("tasks", tasks);
 
@@ -48,6 +48,7 @@ export default function TodoList({ props }) {
         } else if (checkedTask.checked === false) {
             newArr[0] = [checkedTask, ...newArr[0]];
         }
+
         setTasks(newArr);
     };
 
