@@ -16,16 +16,18 @@ export default function TodoList({ tasksTemplate, firstNewId }) {
     };
 
     const addNewTask = (task) => {
-        console.log("hi");
-        const newTask = {
-            id: id,
-            label: task,
-            checked: false,
-        };
+        if (task) {
+            console.log("hi");
+            const newTask = {
+                id: id,
+                label: task,
+                checked: false,
+            };
 
-        tasks[0].push(newTask);
-        setShow(false);
-        setId(id + 1);
+            tasks[0].push(newTask);
+            setShow(false);
+            setId(id + 1);
+        }
     };
 
     const handleDelete = (id) => {
