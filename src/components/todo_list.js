@@ -7,7 +7,7 @@ import AddButton from "./add_button.js";
 import TodoForm from "./todo_form";
 
 export default function TodoList({ tasksTemplate, firstNewId }) {
-    const [tasks, setTasks] = useState(tasksTemplate); 
+    const [tasks, setTasks] = useState(tasksTemplate);
     const [id, setId] = useState(() => firstNewId(tasks));
     const [show, setShow] = useState(false);
 
