@@ -38,6 +38,7 @@ textarea {
     resize: none;
     background-color: transparent;
     border: none;
+    font-family: "Inter", sans-serif;
 }
 
 .show_form {

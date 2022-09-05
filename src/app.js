@@ -1,12 +1,9 @@
 import React from "react";
-import { useState } from "react";
 import "./styles/app.css";
 
 import TodoList from "./components/todo_list.js";
-import AddButton from "./components/add_button.js";
-import TodoForm from "./components/todo_form";
 
-const tasks = [
+const tasksTemplate = [
     [
         {
             id: 0,
@@ -38,23 +35,18 @@ const tasks = [
     ],
 ];
 
+const firstNewId = (tasks) => {
+    let count = 0;
+    for (let i = 0; i < tasks.length; i++) {
+        count += tasks[i].length;
+    }
+    return ++count;
+};
+
 export default function App() {
-    const [show, setShow] = useState(false);
-
-    const toggleForm = () => {
-        console.log("hi", show);
-        if (show === false) {
-            setShow(true);
-            return;
-        }
-        setShow(false);
-    };
-
     return (
         <div id="app">
-            <TodoList props={{ tasks }} />
-            <AddButton openForm={toggleForm} />
-            <TodoForm toggleForm={toggleForm} show={show} />
+            <TodoList tasksTemplate={tasksTemplate} firstNewId={firstNewId} />
         </div>
     );
 }
