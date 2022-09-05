@@ -7,15 +7,17 @@ import SaveButton from "./save_button.js";
 
 export default function TodoForm({ show, addNewTask }) {
     const [newTask, setNewTask] = useState("");
+    const [textarea, setTextArea] = useState(null);
     const ref = useRef(null);
 
     const clearTask = () => {
-        textarea.value = "";
+        setTimeout(() => {
+            textarea.value = "";
+        }, 1000);
     };
 
     useEffect(() => {
-        const textarea = ref.current;
-        console.log(textarea);
+        setTextArea(ref.current);
     });
 
     return (
