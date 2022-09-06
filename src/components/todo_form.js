@@ -5,7 +5,7 @@ import "../styles/todo_form.css";
 
 import SaveButton from "./save_button.js";
 
-export default function TodoForm({ show, addNewTask }) {
+export default function TodoForm({ show, addNewTask, toggleForm }) {
     const [newTask, setNewTask] = useState("");
     const [textarea, setTextArea] = useState(null);
     const ref = useRef(null);
@@ -14,6 +14,7 @@ export default function TodoForm({ show, addNewTask }) {
         setTimeout(() => {
             textarea.value = "";
         }, 1000);
+        setNewTask("");
     };
 
     useEffect(() => {
@@ -21,8 +22,13 @@ export default function TodoForm({ show, addNewTask }) {
     });
 
     return (
-        <div id="todo_form" className={show ? "show_form" : "hide_form"}>
-            <div id="modal" className={show ? "show_modal" : "hide_modal"}>
+        <>
+            <div
+                id="background"
+                className={show ? "show_form" : "hide_form"}
+                onClick={toggleForm}
+            ></div>
+            <div id="todo_form" className={show ? "show_modal" : "hide_modal"}>
                 <textarea
                     ref={ref}
                     id="textarea"
@@ -36,6 +42,6 @@ export default function TodoForm({ show, addNewTask }) {
                     clearTask={clearTask}
                 />
             </div>
-        </div>
+        </>
     );
 }

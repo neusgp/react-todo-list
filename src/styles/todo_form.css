@@ -1,4 +1,4 @@
-#todo_form {
+#background {
     position: absolute;
     width: 100%;
     height: 100vh;
@@ -7,12 +7,12 @@
     transition: visibility 0.5s, opacity 0.5s;
 }
 
-#modal {
+#todo_form {
     flex-direction: column;
     background: #2b2c2e;
     border-radius: 24px;
 
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
 
@@ -23,13 +23,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    transition: opacity 0.5s, visibility 0.5s;
 }
 
 .show_modal {
     animation: slidein 1s forwards;
+    visibility: auto;
+    opacity: 1;
 }
 .hide_modal {
     transform: translate(-50%, -50%);
+    visibility: none;
+    opacity: 0;
 }
 
 textarea {

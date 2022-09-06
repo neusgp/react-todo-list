@@ -11,8 +11,8 @@ export default function TodoList({ tasksTemplate, firstNewId }) {
     const [id, setId] = useState(() => firstNewId(tasks));
     const [show, setShow] = useState(false);
 
-    const openForm = () => {
-        setShow(true);
+    const toggleForm = () => {
+        setShow(!show);
     };
 
     const addNewTask = (task) => {
@@ -91,8 +91,12 @@ export default function TodoList({ tasksTemplate, firstNewId }) {
                     )}
                 </div>
             </div>
-            <AddButton openForm={openForm} />
-            <TodoForm show={show} addNewTask={addNewTask} />
+            <AddButton toggleForm={toggleForm} />
+            <TodoForm
+                show={show}
+                addNewTask={addNewTask}
+                toggleForm={toggleForm}
+            />
         </>
     );
 }
