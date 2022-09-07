@@ -23,7 +23,6 @@ export default function TodoList({ tasksTemplate, firstNewId }) {
 
     const addNewTask = (task) => {
         if (task) {
-            console.log("hi");
             const newTask = {
                 id: id,
                 label: task,
@@ -33,6 +32,12 @@ export default function TodoList({ tasksTemplate, firstNewId }) {
             tasks[0].push(newTask);
             setShow(false);
             setId(id + 1);
+
+            setStyle({
+                height: listHeight + taskHeight,
+                transition: "height 0.5s",
+            });
+            setListHeight(listHeight + taskHeight);
         }
     };
 
