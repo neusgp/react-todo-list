@@ -42,16 +42,19 @@ export default function TodoList({ tasksTemplate, firstNewId }) {
     };
 
     const handleDelete = (id) => {
-        let newArr = [];
-        for (let i = 0; i < tasks.length; i++) {
-            const newTasks = tasks[i].filter((task) => task.id !== id);
-            newArr.push(newTasks);
-        }
-        setTasks(newArr);
-        setStyle({
-            height: listHeight - taskHeight,
-            transition: "height 0.5s",
-        });
+        setTimeout(() => {
+            let newArr = [];
+            for (let i = 0; i < tasks.length; i++) {
+                const newTasks = tasks[i].filter((task) => task.id !== id);
+                newArr.push(newTasks);
+            }
+            setTasks(newArr);
+            setStyle({
+                height: listHeight - taskHeight,
+                transition: "height 0.5s",
+            });
+        }, 500);
+
         setListHeight(listHeight - taskHeight);
     };
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { useRef, useState } from "react";
 import "../styles/checkbox.css";
 
 import bin from "../public/bin.svg";
@@ -11,9 +12,22 @@ export default function Checkbox({
     handleDelete,
     handleChecked,
 }) {
+    const [remove, setRemove] = useState(false);
+    /* const removedTask = useRef(null); */
+
     return (
-        <div id="checkbox">
-            <img className="bin_icon" src={bin} onClick={handleDelete} />
+        <div
+            id="checkbox"
+            /* ref={removedTask} */ className={remove ? "fade_out" : ""}
+        >
+            <img
+                className="bin_icon"
+                src={bin}
+                onClick={() => {
+                    handleDelete();
+                    setRemove(true);
+                }}
+            />
             {checked ? (
                 <>
                     <img

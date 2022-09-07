@@ -2,6 +2,8 @@
     display: flex;
     gap: 2%;
     margin-bottom: 3%;
+
+    transition: opacity 0.5s, visibility 0.5s;
 }
 
 .bin_icon,
@@ -20,4 +22,9 @@
     font-weight: 400;
     color: white;
     text-decoration: line-through;
+}
+
+.fade_out {
+    opacity: 0;
+    visibility: none;
 }
