@@ -8,18 +8,15 @@
     gap: 8px;
 
     width: 80%;
-    height: fit-content;
+    height: 420px;
     background: #242424;
     box-shadow: 4px 12px 24px rgba(0, 0, 0, 0.25);
     border-radius: 32px;
-
-    transition: heigth 1s;
 }
 
 .todo_list_content {
     display: flex;
     flex-direction: column;
     width: 100%;
-
     margin-top: 4%;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import "../styles/todo_list.css";
 
 import Checkbox from "./checkbox.js";
@@ -10,6 +10,12 @@ export default function TodoList({ tasksTemplate, firstNewId }) {
     const [tasks, setTasks] = useState(tasksTemplate);
     const [id, setId] = useState(() => firstNewId(tasks));
     const [show, setShow] = useState(false);
+    const [listHeight, setListHeight] = useState(0);
+    const [taskHeight, setTaskHeight] = useState(0);
+    const [style, setStyle] = useState();
+
+    const taskList = useRef(null);
+    const taskUnit = useRef(null);
 
     const toggleForm = () => {
         setShow(!show);
@@ -37,6 +43,11 @@ export default function TodoList({ tasksTemplate, firstNewId }) {
             newArr.push(newTasks);
         }
         setTasks(newArr);
+        setStyle({
+            height: listHeight - taskHeight,
+            transition: "height 0.5s",
+        });
+        setListHeight(listHeight - taskHeight);
     };
 
     const toggleChecked = (id) => {
@@ -73,20 +84,33 @@ export default function TodoList({ tasksTemplate, firstNewId }) {
         setTasks(newArr);
     };
 
+    useEffect(() => {
+        setListHeight(taskList.current.clientHeight);
+        setTaskHeight(taskUnit.current.clientHeight);
+    }, []);
+
+    console.log(listHeight, taskHeight, style);
+
     return (
         <>
-            <div id="todo_list" className="transition">
+            <div
+                id="todo_list"
+                className="transition"
+                ref={taskList}
+                style={style}
+            >
                 <h1>To-Do List</h1>
                 <div className="todo_list_content">
                     {tasks.map((index) =>
                         index.map((task) => (
-                            <Checkbox
-                                key={task.id}
-                                label={task.label}
-                                checked={task.checked}
-                                handleChecked={() => toggleChecked(task.id)}
-                                handleDelete={() => handleDelete(task.id)}
-                            />
+                            <div ref={taskUnit} key={task.id}>
+                                <Checkbox
+                                    label={task.label}
+                                    checked={task.checked}
+                                    handleChecked={() => toggleChecked(task.id)}
+                                    handleDelete={() => handleDelete(task.id)}
+                                />
+                            </div>
                         ))
                     )}
                 </div>
