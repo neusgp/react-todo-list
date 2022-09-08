@@ -28,3 +28,8 @@
     opacity: 0;
     visibility: none;
 }
+
+.fade_in {
+    opacity: 1;
+    visibility: visible;
+}

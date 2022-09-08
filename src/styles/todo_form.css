@@ -36,7 +36,8 @@
     transform: translate(-50%, -50%);
     visibility: none;
     opacity: 0;
-    z-index: -1;
+    /* z-index: -1; */
+    animation: remove 1s linear 1s;
 }
 
 textarea {
@@ -64,5 +65,14 @@ textarea {
     }
     100% {
         transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes remove {
+    from {
+        display: auto;
+    }
+    to {
+        display: none;
     }
 }

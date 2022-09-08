@@ -18,7 +18,7 @@ export default function Checkbox({
     return (
         <div
             id="checkbox"
-            /* ref={removedTask} */ className={remove ? "fade_out" : ""}
+            /* ref={removedTask} */ className={remove ? "fade_out" : "fade_in"}
         >
             <img
                 className="bin_icon"
