@@ -6,7 +6,7 @@ export default function AddButton({ toggleForm }) {
     return (
         <div id="add_button" className="button" onClick={toggleForm}>
             <img className="add_icon" src={add} />
-            <p className="label_medium">Nuova Voce</p>
+            <p className="label_medium">Add task</p>
         </div>
     );
 }

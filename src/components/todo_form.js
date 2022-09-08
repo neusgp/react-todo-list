@@ -33,7 +33,7 @@ export default function TodoForm({ show, addNewTask, toggleForm }) {
                     ref={ref}
                     id="textarea"
                     className="label"
-                    placeholder="Inserisci voce"
+                    placeholder="Write new task"
                     onChange={(e) => setNewTask(e.target.value)}
                 ></textarea>
                 <SaveButton

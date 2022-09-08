@@ -11,7 +11,7 @@ export default function SaveButton({ addNewTask, newTask, clearTask }) {
                 clearTask();
             }}
         >
-            <p className="label_medium">Salva</p>
+            <p className="label_medium">Save</p>
         </div>
     );
 }
