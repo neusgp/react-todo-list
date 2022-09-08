@@ -2,9 +2,9 @@ import React from "react";
 import { useRef, useState } from "react";
 import "../styles/checkbox.css";
 
-import bin from "../public/bin.svg";
-import checkon from "../public/checkon.svg";
-import checkoff from "../public/checkoff.svg";
+import bin from "../media/bin.svg";
+import checkon from "../media/checkon.svg";
+import checkoff from "../media/checkoff.svg";
 
 export default function Checkbox({
     label,
