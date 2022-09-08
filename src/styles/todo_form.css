@@ -24,20 +24,20 @@
     justify-content: center;
     align-items: center;
 
-    transition: opacity 0.5s, visibility 0.5s;
+    transition: opacity 0.5s, visibility 0.5s, z-index 1s;
 }
 
 .show_modal {
     animation: slidein 1s forwards;
     visibility: auto;
     opacity: 1;
+    z-index: 1;
 }
 .hide_modal {
     transform: translate(-50%, -50%);
     visibility: none;
     opacity: 0;
-    /* z-index: -1; */
-    animation: remove 1s linear 1s;
+    z-index: -1;
 }
 
 textarea {
@@ -65,14 +65,5 @@ textarea {
     }
     100% {
         transform: translate(-50%, -50%);
-    }
-}
-
-@keyframes remove {
-    from {
-        display: auto;
-    }
-    to {
-        display: none;
     }
 }

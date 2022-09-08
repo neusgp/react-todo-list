@@ -53,7 +53,7 @@ export default function TodoList({ tasksTemplate, firstNewId }) {
                 height: listHeight - taskHeight,
                 transition: "height 0.5s",
             });
-        }, 300);
+        }, 200);
 
         setListHeight(listHeight - taskHeight);
     };
